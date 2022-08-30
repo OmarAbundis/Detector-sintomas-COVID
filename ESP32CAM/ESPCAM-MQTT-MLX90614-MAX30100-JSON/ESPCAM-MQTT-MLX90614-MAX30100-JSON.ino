@@ -328,18 +328,20 @@ void reconnect()
 }                                                                           // fin de void reconnect(
 
 // Funcion de primeras 100 lecturas
-void max30100First () {
-  bufferLength = 100; //buffer length of 100 stores 4 seconds of samples running at 25sps
+void max30100First () 
+{
+  bufferLength = 100;                                                       //buffer length of 100 stores 4 seconds of samples running at 25sps
 
   //read the first 100 samples, and determine the signal range
+  
   for (byte i = 0 ; i < bufferLength ; i++)
   {
-    while (particleSensor.available() == false) //do we have new data?
-      particleSensor.check(); //Check the sensor for new data
+    while (particleSensor.available() == false)                             //do we have new data?
+      particleSensor.check();                                               //Check the sensor for new data
 
     redBuffer[i] = particleSensor.getRed();
     irBuffer[i] = particleSensor.getIR();
-    particleSensor.nextSample(); //We're finished with this sample so move to next sample
+    particleSensor.nextSample();                                            //We're finished with this sample so move to next sample
 
     Serial.print(F("red="));
     Serial.print(redBuffer[i], DEC);
@@ -348,5 +350,6 @@ void max30100First () {
   }
 
   //calculate heart rate and SpO2 after first 100 samples (first 4 seconds of samples)
+  
   maxim_heart_rate_and_oxygen_saturation(irBuffer, bufferLength, redBuffer, &spo2, &validSPO2, &heartRate, &validHeartRate);
 }
