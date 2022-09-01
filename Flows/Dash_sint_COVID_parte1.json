@@ -1,0 +1,228 @@
+[
+    {
+        "id": "4a9ef367736b473f",
+        "type": "tab",
+        "label": "Flow 8",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "afc38c39b24a994d",
+        "type": "mqtt in",
+        "z": "4a9ef367736b473f",
+        "name": "",
+        "topic": "codigoIoT/detectorSintomas/flow",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d191d34239fdbca3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "d7165caf4aad804b",
+                "da6817bfa8a9f0ac",
+                "63d833eb54172acb"
+            ]
+        ]
+    },
+    {
+        "id": "d7165caf4aad804b",
+        "type": "function",
+        "z": "4a9ef367736b473f",
+        "name": "spO2",
+        "func": "if (msg.payload.spo2v == 1) {\n    msg.payload = msg.payload.spo2;\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "0be9e1aec23cd043"
+            ]
+        ]
+    },
+    {
+        "id": "da6817bfa8a9f0ac",
+        "type": "function",
+        "z": "4a9ef367736b473f",
+        "name": "Temp",
+        "func": "msg.payload = msg.payload.Tempir;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 180,
+        "wires": [
+            [
+                "32851c0c427aa042"
+            ]
+        ]
+    },
+    {
+        "id": "63d833eb54172acb",
+        "type": "function",
+        "z": "4a9ef367736b473f",
+        "name": "Ritmo Cardiaco",
+        "func": "if (msg.payload.hrv == 1) {\n    msg.payload = msg.payload.hr;\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 260,
+        "wires": [
+            [
+                "8b8626f291cbc7e9"
+            ]
+        ]
+    },
+    {
+        "id": "0be9e1aec23cd043",
+        "type": "ui_gauge",
+        "z": "4a9ef367736b473f",
+        "name": "",
+        "group": "6ccbcf70cf971e8e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "spO2",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#d62728",
+            "#00b500",
+            "#00b500"
+        ],
+        "seg1": "90",
+        "seg2": "99",
+        "className": "",
+        "x": 810,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "32851c0c427aa042",
+        "type": "ui_gauge",
+        "z": "4a9ef367736b473f",
+        "name": "",
+        "group": "6ccbcf70cf971e8e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#0094ce",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "34",
+        "seg2": "37",
+        "className": "",
+        "x": 830,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8b8626f291cbc7e9",
+        "type": "ui_gauge",
+        "z": "4a9ef367736b473f",
+        "name": "",
+        "group": "6ccbcf70cf971e8e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Ritmo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#d62728",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "110",
+        "className": "",
+        "x": 810,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c26f4a8d60148de2",
+        "type": "ui_spacer",
+        "z": "4a9ef367736b473f",
+        "name": "spacer",
+        "group": "6ccbcf70cf971e8e",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d191d34239fdbca3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6ccbcf70cf971e8e",
+        "type": "ui_group",
+        "name": "Medidas",
+        "tab": "6356027da40bcd49",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6356027da40bcd49",
+        "type": "ui_tab",
+        "name": "Detector sintomas COVID",
+        "icon": "dashboard",
+        "order": 9,
+        "disabled": false,
+        "hidden": false
+    }
+]
