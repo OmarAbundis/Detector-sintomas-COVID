@@ -15,8 +15,25 @@ Para su realización práctica primeramente se arma un circuito electrónico cap
 - 1 cable USB a USB mini.
 - Jumpers MM.
 
+## Software necesario
+
+En la experimentación de está práctica se debe de contar con el siguiente software libre:
+
+- Ubuntu 20.04
+- Arduino IDE
+- Mosquitto MQTT Broker, Listener en puerto 1883 para 0.0.0.0 y conexiones autentificadas activadas.
+- NodeJS. NPM, NodeRed y Node Dashboard.
+- MySQL
 
 ## Material de referencia
+
+Previamente a la realización de está práctica, ha sido necesario el estudio de distitos temas, que se encuentran en la plataforma edu.codigoiot.com, en donde se explican conceptos y configuraciones necesarias, tales como:
+
+- Instalación de virtual Box y Ubuntu 20.04
+- Configuración de Arduino IDE para ESP32CAM
+- Instalación de NodeRed
+- Introducción a NodeRed
+- Instalación de Mosquitto MQTT
 
 ## Servicios
 
