@@ -1,0 +1,21 @@
+[
+    {
+        "id": "b4437c385d6a5113",
+        "type": "function",
+        "z": "4a9ef367736b473f",
+        "name": "function 3",
+        "func": "if(global.get(\"temp\") > 37){\n    msg.payload = \"Temperatura alta\";\n    return msg;\n}\n\nif(global.get(\"temp\")>35 && global.get(\"temp\") < 37){\n    msg.payload = \"Temperatura normal\";\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 480,
+        "wires": [
+            [
+                "8d1ee5625e724647"
+            ]
+        ]
+    }
+]

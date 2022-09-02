@@ -279,8 +279,10 @@ void loop()
 
     tempir = mlx.readObjectTempC();                                 // Se envía la lectura del sensor de temperatura
     
-    Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempC());
-    Serial.print("*C\tObject = "); Serial.print(mlx.readObjectTempC()); Serial.println("*C");
+    Serial.print("Ambient = "); 
+    Serial.print(mlx.readAmbientTempC());
+    Serial.print("*C\tObject = "); 
+    Serial.print(mlx.readObjectTempC()); Serial.println("*C");
     Serial.println();
 
   }
