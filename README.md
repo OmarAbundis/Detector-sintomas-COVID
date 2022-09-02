@@ -26,6 +26,9 @@ Para una experimentación satisfactoria es necesario cumplir lo siguiente:
 
 1. Realizar el armado del circuito mostrado en la figura 1.
 
+**Figura 1.** *Circuito electrónico*
+![]()
+
 
 
 ## Instrucciones de operación
