@@ -11,7 +11,7 @@ Para su realización práctica primeramente se arma un circuito electrónico cap
 - [FTDI](https://microcontrollerslab.com/ftdi-usb-to-serial-converter-cable-use-linux-windows/), trjeta controladora USB.
 - [MLX90614](https://www.sparkfun.com/datasheets/Sensors/Temperature/MLX90614_rev001.pdf), sensor de temperatura infrarrojo.
 - [MAX30100](https://datasheets.maximintegrated.com/en/ds/MAX30100.pdf), sensor de ritmo cardíaco y porsentaje de oxigenación en la sangre.
-- 2 resistores de 10Kohms.(Cáfe, negro, naranja, dorado).
+- 2 resistores de 10Kohms. (Cáfe, negro, naranja, dorado).
 - 1 cable USB a USB mini.
 - Jumpers MM.
 
