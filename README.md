@@ -1,2 +1,39 @@
 # Detector-sintomas-COVID
-Es una práctica en donde se va a detectar la oxigenación, los BPM y la temperatura de una persona, haciendo uso de los sesnsores MLX90614 y MAX30102, el ESP32CAM, NodeRed y MySQL para llevar un registro.
+## Introducción
+
+Como parte de las actividades de aprendizaje del taller de IoT, se ha solicitado realizar una aplicación que sirva de apoyo, en la detección de los sintomas más frecuentes que se presentan en las personas al manifestarse contagio del virus del COVID-19, las cuales son: nivel de oxigenación, pulso cardíaco y temperatura corporal.
+
+Para su realización práctica primeramente se arma un circuito electrónico capaz de detectar y procesar las variables indicadas, después se intercomunicaran los datos obtenidos usando el protocolo MQTT, luego se mostran los valores de manera gráfica usando un CANVAS en NodeRed, se notificará en caso del alto riesgo por correo electrónico al solicitante y se almacenarán los datos en una base de datos.
+
+## Material necesario
+
+- [ESP32CAM](https://docs.ai-thinker.com/en/esp32-cam), tarjeta de desarrollo.
+- [FTDI](https://microcontrollerslab.com/ftdi-usb-to-serial-converter-cable-use-linux-windows/), trjeta controladora USB.
+- [MLX90614](https://www.sparkfun.com/datasheets/Sensors/Temperature/MLX90614_rev001.pdf), sensor de temperatura infrarrojo.
+- [MAX30100](https://datasheets.maximintegrated.com/en/ds/MAX30100.pdf), sensor de ritmo cardíaco y porsentaje de oxigenación en la sangre.
+- 2 resistores de 10Kohms.(Cáfe, negro, naranja, dorado).
+- 1 cable USB a USB mini.
+- Jumpers MM.
+
+
+## Material de referencia
+
+## Servicios
+
+## Instrucciones para la realización de la práctica
+
+
+## Instrucciones de operación
+
+
+## Resultados
+
+
+## Evidencia
+
+
+## Preguntas frecuentes
+
+## Compatibilidad
+
+## Créditos
