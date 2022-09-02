@@ -22,6 +22,11 @@ Para su realización práctica primeramente se arma un circuito electrónico cap
 
 ## Instrucciones para la realización de la práctica
 
+Para una experimentación satisfactoria es necesario cumplir lo siguiente:
+
+1. Realizar el armado del circuito mostrado en la figura 1.
+
+
 
 ## Instrucciones de operación
 
