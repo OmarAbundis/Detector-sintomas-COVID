@@ -1,8 +1,8 @@
 # Configuración de MySQL en terminal de Ubuntu
 
 1. Instalar mysql server
-+ sudo apt update
-+ sudo apt install mysql-server
++ `sudo apt update`
++ `sudo apt install mysql-server`
 
 2. Entrar a mysql con la instrucción:
    
