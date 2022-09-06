@@ -9,17 +9,26 @@
  * Date: October 19th, 2016  
  * https://github.com/sparkfun/MAX30105_Breakout
  * 
- * Este programa realizara la lectura de los sensores MAX30100 y MLX90614
- * para medir los principales indicadores de síntomas de COVID, los cuales
- * son ritmo cardiaco, temperatura y oxigenación en la sangre. Se enviará
- * un JSON por MQTT con todas las variables. Este programa es para el micro
- * controlador ESP32CAM
+ * Este programa realizara la lectura de los sensores MAX30100 y MLX90614,
+ * con la ayuda del microcontrolador ESP32CAM, y es empleado para medir 
+ * los principales indicadores de síntomas de COVID, los cuales
+ * son ritmo cardiaco, temperatura y oxigenación en la sangre. 
+ * Se enviará   un JSON por MQTT con todas las variables y posteriormente se almacenaran los
+ * datos registrados en MySQL.
+ * 
+ * Descripción de las conexiones entre dispositivos.
  * 
  * MAX30100     ESP32CAM
  * 5v-----------5V
  * GND----------GND
  * SDA----------14
  * SCL----------15
+ * 
+ * MLX90614     ESP32CAM
+ * 5V --------- 5v
+ * GND -------- GND
+ * SDA  ------- SDA
+ * SCL -------- SCL
  * 
  */
 
@@ -28,10 +37,14 @@
 #include <WiFi.h>                                               // Biblioteca para el control de WiFi
 #include <PubSubClient.h>                                       //Biblioteca para conexion MQTT
 #include <Wire.h>                                               // Biblioteca para comunicación I2C
-#include "MAX30105.h"                                           // Biblioteca del sensor 
-#include "spo2_algorithm.h"                                     // Biblioteca para interpretación de señales
+#include <MAX30105.h>                                           // Biblioteca del sensor 
+#include <spo2_algorithm.h>                                     // Biblioteca para interpretación de señales
+
+#include <Adafruit_MLX90614.h>                                  // Biblioteca de control del sensor MLX90614
+
 
 //Datos de WiFi
+
 const char* ssid = "INFINITUMB46E_2.4";                         // Aquí debes poner el nombre de tu red
 const char* password = "4520297937";                            // Aquí debes poner la contraseña de tu red
 
@@ -41,9 +54,13 @@ const char* mqtt_server = "192.168.1.64";                      // Si estas en un
 IPAddress server(192,168,1,64);
 
 // Objetos
+
 WiFiClient espClient;                                           // Este objeto maneja los datos de conexion WiFi
 PubSubClient client(espClient);                                 // Este objeto maneja los datos de conexion al broker
 MAX30105 particleSensor;                                        // Objeto para manejar el sensor MAX301000
+
+Adafruit_MLX90614 mlx = Adafruit_MLX90614();                    // 
+
 
 //#define MAX_BRIGHTNESS 255                                      // Constante de brillo para el MAX30105
 
@@ -51,9 +68,14 @@ MAX30105 particleSensor;                                        // Objeto para m
 
 int ledPin = 33;                                                // Para indicar el estatus de conexión
 int ledPin2 = 4;                                                // Para mostrar mensajes recibidos
-long timeNow, timeLastMQTT, timeLastMax30100;                   // Variables de control de tiempo no bloqueante
+
+long timeNow,timeLast,timeLastMQTT;                           // Variables de control de tiempo no bloqueante
+long timeLastMax30100,timeLastMLX90614; 
+
 int wait = 5000;                                                // Indica la espera cada 5 segundos para envío de mensajes MQTT
-int waitMax30100 = 4000;                                        // Espera para lectua del sensor MAX30100
+int waitMax30100 = 5000;                                        // Espera para lectua del sensor MAX30100
+int waitMLX90614 = 500;                                         // Espera para lectua del sensor MLX90614
+int tempir = 0;
 
 
 #define MAX_BRIGHTNESS 255                                      // Constante de brillo para el MAX30105
@@ -137,10 +159,11 @@ void setup()
   client.setCallback(callback);                                     // Activar función de CallBack, permite recibir mensajes MQTT y ejecutar funciones a partir de ellos
   delay(1500);                                                      // Esta espera es preventiva, espera a la conexión para no perder información
 
-  // Initialize sensor
   
-  Wire.begin (14,15);
-  if (!particleSensor.begin(Wire, I2C_SPEED_FAST))                  //Use default I2C port, 400kHz speed
+  // Initializa el sensor MAX30100
+   
+  Wire.begin (14,15);                                               // Líneas de conexión de SDA-14 y SCL-15.
+  if (!particleSensor.begin(Wire))                  //Use default I2C port, 400kHz speed // , I2C_SPEED_FAST
   {
     Serial.println(F("MAX30105 was not found. Please check wiring/power."));
     while (1);
@@ -163,12 +186,26 @@ void setup()
                                                                   
   particleSensor.setup(ledBrightness, sampleAverage, ledMode, sampleRate, pulseWidth, adcRange); 
 
-  max30100First ();                                               // Esta funcion realiza las primears 100 lecturas
+    max30100First ();                                               // Esta funcion realiza las primears 100 lecturas
+
+    // Initializa el sensor MLX90614
+
+  Wire.begin (14,15);                                               // Líneas de conexión de SDA-14 y SCL-15.
+  if (!mlx.begin(0x5A, &Wire)) 
+  {
+    Serial.println("Error connecting to MLX sensor. Check wiring.");
+    while (1);
+  };
+
+  Serial.print("Emissivity = "); Serial.println(mlx.readEmissivity());
+  Serial.println("================================================");
+  //timeLast = millis (); // Inicia el control de tiempo
   
   timeLastMQTT = millis ();                                       // Inicia el control de tiempo de envio mqtt
   timeLastMax30100 = millis ();                                   // Inicia el control de tiempo del sensor
+  timeLastMLX90614 = millis ();                                   // Inicia el control de tiempo
 
-  
+   
 }// fin del void setup ()
 
 // Cuerpo del programa, bucle principal
@@ -232,7 +269,25 @@ void loop()
     maxim_heart_rate_and_oxygen_saturation(irBuffer, bufferLength, redBuffer, &spo2, &validSPO2, &heartRate, &validHeartRate);
     
   }
+
+  timeNow = millis();                                             // Control de tiempo para esperas no bloqueantes
+
+  if (timeNow - timeLastMLX90614 > waitMLX90614) 
+  {
+    timeLastMLX90614 = timeNow;
+
+
+    tempir = mlx.readObjectTempC();                                 // Se envía la lectura del sensor de temperatura
+    
+    Serial.print("Ambient = "); 
+    Serial.print(mlx.readAmbientTempC());
+    Serial.print("*C\tObject = "); 
+    Serial.print(mlx.readObjectTempC()); Serial.println("*C");
+    Serial.println();
+
+  }
   
+   timeNow = millis();  
   
   if (timeNow - timeLastMQTT > wait) 
   
@@ -241,7 +296,9 @@ void loop()
 
     //Se construye el string correspondiente al JSON que contiene 3 variables
     
-    String json = "{\"hr\"=" + String (heartRate) + ",\"hrv\":" + String (validHeartRate) + ",\"spo2\":" + String (spo2) + ",\"spo2v\":"+ String (validSPO2) + "}";
+    
+    
+    String json = "{\"hr\":" + String (heartRate) + ",\"hrv\":" + String (validHeartRate) + ",\"spo2\":" + String (spo2) + ",\"spo2v\":"+ String (validSPO2) + ",\"Tempir\":" + String (tempir) + "}";
     
     Serial.println(json);                                               // Se imprime en monitor solo para poder visualizar que el string esta correctamente creado
     int str_len = json.length() + 1;                                    //Se calcula la longitud del string
