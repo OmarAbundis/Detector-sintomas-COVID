@@ -61,7 +61,7 @@ Los pasos que se deben de serguir para la adquisición de los valores de la form
 - Introducir el nombre y correo electrónico del paciente.
 - Colocar el dedo índice sobre el sensor MLX90614 y el sensor de temperatura MAX30100.
 - Esperar a que el sistema tome las mediciones, entre 30 y 60 segundos.
-- Presionar el botón **Realizar diagnostico**.
+- Presionar el botón **REALIZAR DIAGNÓSTICO**.
 
 
 ## Resultados
@@ -84,6 +84,6 @@ En la figura 4, se muestra el respaldo de los datos en MySQL, del paciente.
 
 ## Preguntas frecuentes
 
-## Compatibilidad
-
 ## Créditos
+
+Al profesor Hugo Vargas, instructor del curso de IoT.
