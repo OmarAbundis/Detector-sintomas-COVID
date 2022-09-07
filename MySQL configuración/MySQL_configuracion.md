@@ -66,6 +66,6 @@ Puedes consultar todos los datos de una tabla con el siguiente comando:
 
 **Figura 4.** *SELECT * FROM registro;*
 
-![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/SELECT%20FROM%20registro.PNG)
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/SELECT%20FROM%20registro.PNG)
 
 
