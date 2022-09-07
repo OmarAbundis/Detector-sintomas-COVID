@@ -34,7 +34,11 @@ Notas
 
 Puedes consultar todas las bases de datos con el comando
     
-`show databases;`
+`show databases;` Ver figura 1.
+
+**Figura 1.** *Muestra de base datos en MySQL.*
+
+()[]
 
 Puedes consultar las tablas en el interior de una base de datos selecccionada con el comando 
     
