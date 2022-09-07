@@ -21,9 +21,12 @@ En la experimentación de está práctica se debe de contar con el siguiente sof
 
 - Ubuntu 20.04
 - Arduino IDE
- -- Gestor de tarjetas ESP32
- -- Configuración de IDE de Arduino para trabajar con el ESP32CAM
- -- Biblioteca PubSubClient
+ --Gestor de tarjetas ESP32
+ 
+ --Configuración de IDE de Arduino para trabajar con el ESP32CAM
+ 
+ --Biblioteca PubSubClient
+ 
  
 - Mosquitto MQTT Broker, Listener en puerto 1883 para 0.0.0.0 y conexiones autentificadas activadas.
 - NodeJS. NPM, NodeRed y Node Dashboard.
