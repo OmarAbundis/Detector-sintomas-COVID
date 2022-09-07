@@ -53,7 +53,11 @@ Para una experimentación satisfactoria es necesario cumplir lo siguiente:
 **Figura 2.** *Flow de control.*
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Flow%20Detector%20sintomas%20COVID.PNG)
 
+4. Ya seleccionado el *dashboard*, se introducen los datos solicitados correo electrónico y nombre del paciente, posteriormente se toman las medidas de la temperatura, oxigenación y pulsos por minuto, cabe destacar que se debe de tener mucho cuidado de la colocación de los sensores en el paciente, porque de lo contrario, se obtendrán mediciones incorrectas. Ver figura 3.
 
+**Figura 3.** *Dashboard para tomar medidas.*
+
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Dashboard.PNG)
 
 
 ## Instrucciones de operación
