@@ -44,7 +44,7 @@ Para una experimentación satisfactoria es necesario cumplir lo siguiente:
 1. Realizar el armado del circuito mostrado en la figura 1.
 
 **Figura 1.** *Circuito electrónico*
-![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/ESP32CAM/CTO_ESP32CAM_FTDI_MAX30100_MLX90614.png)
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/CTO_ESP32CAM_FTDI_MAX30100_MLX90614.png)
 
 2. Cargar el [programa](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/ESP32CAM/ESPCAM-MQTT-MLX90614-MAX30100-JSON/ESPCAM-MQTT-MLX90614-MAX30100-JSON.ino) de control que permite la detección, procesado y tranformación de las variables a **JSON**, para que sean enviadas a través **MQTT** al flow en NodeRed.
 
