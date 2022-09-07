@@ -72,6 +72,12 @@ En la figura 3, se muestra el dashboard realizado para interactuar con el circui
 
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Dashboard.PNG)
 
+En la figura 4, se muestra el respaldo de los datos en MySQL, del paciente.
+
+**Figura 4.** *Datos en MySQL.*
+
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/SELECT%20FROM%20registro.PNG)
+
 
 ## Evidencia
 
