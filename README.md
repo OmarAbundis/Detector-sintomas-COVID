@@ -84,7 +84,7 @@ En la figura 4, se muestra el respaldo de los datos en MySQL, del paciente.
 
 ## Preguntas frecuentes
 
-**¿Por qué no se conecta el ESP32CAM a la red por WiFi?
+**¿Por qué no se conecta el ESP32CAM a la red por WiFi?**
  - **R:** Verificar que en el programa de control hayas colocado correctamente el SSID y la contraseña de tu router.
  - **R:** Verificar que tú red tenga una conexión AES-WPA2.
  - **R:** El ESP32CAM debe de estar en un rango de no más de tres metros al router y no debe de haber piezas metálicas cercanas.
