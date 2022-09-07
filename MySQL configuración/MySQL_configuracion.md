@@ -32,7 +32,7 @@
 
 Notas
 
-Puedes consultar todas las bases de datos con el comando
+Puedes consultar todas las bases de datos con el comando:
     
 `show databases;` Ver figura 1.
 
@@ -40,16 +40,18 @@ Puedes consultar todas las bases de datos con el comando
 
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/Show%20databases.PNG)
 
-Puedes consultar las tablas en el interior de una base de datos selecccionada con el comando 
+Puedes consultar las tablas en el interior de una base de datos selecccionada con el comando: 
     
 `show tables;` Ver figura 2.
+
 **Figura 2.** * show tables;*
 
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/Show%20tables.PNG)
 
-Puedes consultar la forma de la tabla con el comando 
+Puedes consultar la forma de la tabla con el comando:
 
 `describe registro;` Ver figura 3.
+
 **Figura 3.** *describe registro;*
 
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/Describe%20registro.PNG)
@@ -58,9 +60,10 @@ Para agregar información a la base de datos con NodeRed se requiere poner en un
 
 msg.topic = "INSERT INTO registro (nombre,correo,temp,bpm,sp02,protodiagnostico) VALUES ('" + global.get ("paciente") + "','" + global.get ("correo") + "'," + global.get ("temp") + "," + global.get ("hr") + "," + global.get ("spo2") + ",'" + global.get("protodiagnostico") + "');"; return msg;
 
-Puedes consultar todos los datos de una tabla con el siguiente comando 
+Puedes consultar todos los datos de una tabla con el siguiente comando:
 
 `SELECT * FROM registro;` Ver figura 4.
+
 **Figura 4.** *SELECT * FROM registro;*
 
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/SELECT%20FROM%20registro.PNG)
