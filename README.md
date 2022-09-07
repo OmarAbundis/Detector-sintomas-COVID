@@ -84,6 +84,18 @@ En la figura 4, se muestra el respaldo de los datos en MySQL, del paciente.
 
 ## Preguntas frecuentes
 
+**¿Por qué no se conecta el ESP32CAM a la red por WiFi?
+ - **R:** Verificar que en el programa de control hayas colocado correctamente el SSID y la contraseña de tu router.
+ - **R:** Verificar que tú red tenga una conexión AES-WPA2.
+ - **R:** El ESP32CAM debe de estar en un rango de no más de tres metros al router y no debe de haber piezas metálicas cercanas.
+
+**¿Por qué no se pueden observar en el dashboar la información de los sensores?**
+
+  - **R:** Verifivar que se hayan escrito los mismos temas en los suscriptores y en los publicadores tanto en el flow como en el programa.
+  - **R:** Asegurarse de tener una regla que permita conexiones con el puerto 1883 y tener correctamente configurado el archivo **mosquitto.conf**.
+  - **R:** Asegurarse que se tenga la IP más reciente del broker público, ya que cambia con frecuencia.
+  - **R:** Esperar entre 30 y 60 segundos para que el senso MAX30100 realice las primeras 100 lecturas.
+
 ## Créditos
 
 Al profesor Hugo Vargas, instructor del curso de IoT.
