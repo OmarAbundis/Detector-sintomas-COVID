@@ -38,7 +38,7 @@ Puedes consultar todas las bases de datos con el comando:
 
 **Figura 1.** *Muestra de base datos en MySQL.*
 
-![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/Show%20databases.PNG)
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Show%20databases.PNG)
 
 Puedes consultar las tablas en el interior de una base de datos selecccionada con el comando: 
     
