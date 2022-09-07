@@ -54,7 +54,7 @@ Puedes consultar la forma de la tabla con el comando:
 
 **Figura 3.** *describe registro;*
 
-![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/Describe%20registro.PNG)
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Describe%20registro.PNG)
 
 Para agregar información a la base de datos con NodeRed se requiere poner en un nodo Function la siguiente información:
 
