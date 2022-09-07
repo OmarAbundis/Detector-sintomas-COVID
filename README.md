@@ -51,6 +51,8 @@ Para una experimentación satisfactoria es necesario cumplir lo siguiente:
 3. Armar y configurar cada uno de los elementos que integran al flow. Ver figura 2.
 
 **Figura 2.** *Flow de control.*
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Flow%20Detector%20sintomas%20COVID.PNG)
+
 
 
 
