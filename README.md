@@ -3,7 +3,7 @@
 
 Como parte de las actividades de aprendizaje del taller de IoT, se ha solicitado realizar una aplicación que sirva de apoyo, en la detección de los sintomas más frecuentes que se presentan en las personas al manifestarse contagio del virus del COVID-19, las cuales son: nivel de oxigenación, pulso cardíaco y temperatura corporal.
 
-Para su realización práctica primeramente se arma un circuito electrónico capaz de detectar y procesar las variables indicadas, después se intercomunicaran los datos obtenidos usando el protocolo MQTT, luego se mostran los valores de manera gráfica usando un CANVAS en NodeRed, se notificará en caso del alto riesgo por correo electrónico al solicitante y se almacenarán los datos en una base de datos.
+Para su realización práctica primeramente se arma un circuito electrónico capaz de detectar y procesar las variables indicadas, después se intercomunicarán los datos obtenidos usando el protocolo MQTT, luego se mostrán los valores de manera gráfica usando un CANVAS en NodeRed, se notificará en caso del alto riesgo por correo electrónico al solicitante y se almacenarán los datos en una base de datos.
 
 ## Material necesario
 
