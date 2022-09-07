@@ -21,13 +21,6 @@ En la experimentación de está práctica se debe de contar con el siguiente sof
 
 - Ubuntu 20.04
 - Arduino IDE
- --Gestor de tarjetas ESP32
- 
- --Configuración de IDE de Arduino para trabajar con el ESP32CAM
- 
- --Biblioteca PubSubClient
- 
- 
 - Mosquitto MQTT Broker, Listener en puerto 1883 para 0.0.0.0 y conexiones autentificadas activadas.
 - NodeJS. NPM, NodeRed y Node Dashboard.
 - MySQL
@@ -41,8 +34,6 @@ Previamente a la realización de está práctica, ha sido necesario el estudio d
 - Instalación de NodeRed
 - Introducción a NodeRed
 - Instalación de Mosquitto MQTT
-
-## Servicios
 
 ## Instrucciones para la realización de la práctica
 
@@ -60,17 +51,26 @@ Para una experimentación satisfactoria es necesario cumplir lo siguiente:
 **Figura 2.** *Flow de control.*
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Flow%20Detector%20sintomas%20COVID.PNG)
 
-4. Ya seleccionado el *dashboard*, se introducen los datos solicitados correo electrónico y nombre del paciente, posteriormente se toman las medidas de la temperatura, oxigenación y pulsos por minuto, cabe destacar que se debe de tener mucho cuidado de la colocación de los sensores en el paciente, porque de lo contrario, se obtendrán mediciones incorrectas. Ver figura 3.
+4. Ya seleccionado el *dashboard*, se introducen los datos solicitados correo electrónico y nombre del paciente, posteriormente se toman las medidas de la temperatura, oxigenación y pulsos por minuto, cabe destacar que se debe de tener mucho cuidado de la colocación de los sensores en el paciente, porque de lo contrario, se obtendrán mediciones incorrectas.
+
+## Instrucciones de operación
+
+Los pasos que se deben de serguir para la adquisición de los valores de la forma más correcta posible son los siguientes:
+
+- Abrir el dashboard creado para interactuar con el circuito elecrónico, desde la computadora en que se ejecuta NodeRed.
+- Introducir el nombre y correo electrónico del paciente.
+- Colocar el dedo índice sobre el sensor MLX90614 y el sensor de temperatura MAX30100.
+- Esperar a que el sistema tome las mediciones, entre 30 y 60 segundos.
+- Presionar el botón **Realizar diagnostico**.
+
+
+## Resultados
+
+En la figura 3, se muestra el dashboard realizado para interactuar con el circuito electrónico.
 
 **Figura 3.** *Dashboard para tomar medidas.*
 
 ![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Dashboard.PNG)
-
-
-## Instrucciones de operación
-
-
-## Resultados
 
 
 ## Evidencia
