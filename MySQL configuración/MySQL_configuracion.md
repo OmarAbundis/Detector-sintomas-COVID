@@ -45,8 +45,7 @@ Puedes consultar las tablas en el interior de una base de datos selecccionada co
 `show tables;` Ver figura 2.
 **Figura 2.** * show tables;*
 
-![]()
-
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/Show%20tables.PNG)
 
 Puedes consultar la forma de la tabla con el comando 
 
