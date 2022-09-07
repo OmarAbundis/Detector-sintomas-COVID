@@ -42,11 +42,18 @@ Puedes consultar todas las bases de datos con el comando
 
 Puedes consultar las tablas en el interior de una base de datos selecccionada con el comando 
     
-`show tables;`
+`show tables;` Ver figura 2.
+**Figura 2.** * show tables;*
+
+![]()
+
 
 Puedes consultar la forma de la tabla con el comando 
 
-`describe registro;`
+`describe registro;` Ver figura 3.
+**Figura 3.** *describe registro;*
+
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/MySQL%20configuraci%C3%B3n/Describe%20registro.PNG)
 
 Para agregar información a la base de datos con NodeRed se requiere poner en un nodo Function la siguiente información:
 
@@ -54,4 +61,6 @@ msg.topic = "INSERT INTO registro (nombre,correo,temp,bpm,sp02,protodiagnostico)
 
 Puedes consultar todos los datos de una tabla con el siguiente comando 
 
-`SELECT * FROM clima;`
+`SELECT * FROM registro;` Ver figura 4.
+**Figura 4.** *SELECT * FROM registro;*
+![]()
