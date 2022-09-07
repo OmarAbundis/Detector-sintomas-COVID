@@ -1,0 +1,16 @@
+[
+    {
+        "id": "bb099ac844c7a0c7",
+        "type": "e-mail",
+        "z": "4a9ef367736b473f",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": false,
+        "tls": false,
+        "name": "icaro_713@hotmail.com",
+        "dname": "Email",
+        "x": 810,
+        "y": 440,
+        "wires": []
+    }
+]
