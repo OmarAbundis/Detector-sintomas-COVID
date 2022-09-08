@@ -81,6 +81,25 @@ En la figura 4, se muestra el respaldo de los datos en MySQL, del paciente.
 
 ## Evidencia
 
+En la figura 5, se muestra la configuración del nodo de protodiagnóstico.
+
+**Figura 5.** *Nodo protodiagnóstico.*
+
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Nodo%20protodiagnostico.PNG)
+
+En la figura 6, se muestra la imagen de mensaje recibido en la bandeja del correo.
+
+**Figura 6.** *Mensaje recibido.*
+
+En la figura 7, se muestra el texto del mensaje recibido con el protodiagnóstico.
+
+**Figura 7.** *Texto de mensaje.*
+
+
+
+
+
+
 En el siguiente enlace se puede ver el vídeo de su funcionamiento en YouTube.
 
 [VídeoFuncionamiento](https://youtu.be/66zUjtGDG9E)
