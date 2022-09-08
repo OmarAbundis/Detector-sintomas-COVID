@@ -91,14 +91,13 @@ En la figura 6, se muestra la imagen de mensaje recibido en la bandeja del corre
 
 **Figura 6.** *Mensaje recibido.*
 
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/Correo%20recibido.PNG)
+
 En la figura 7, se muestra el texto del mensaje recibido con el protodiagnóstico.
 
 **Figura 7.** *Texto de mensaje.*
 
-
-
-
-
+![](https://github.com/OmarAbundis/Detector-sintomas-COVID/blob/main/Figuras/mensaje%20recibido.PNG)
 
 En el siguiente enlace se puede ver el vídeo de su funcionamiento en YouTube.
 
