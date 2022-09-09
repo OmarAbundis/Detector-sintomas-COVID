@@ -1,0 +1,43 @@
+[
+    {
+        "id": "81dd1db99c330332",
+        "type": "ui_template",
+        "z": "4a9ef367736b473f",
+        "group": "d141fdbfb6d292a0",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<iframe src=\"http://localhost:3000/d-solo/FSjvyfGVz/protodiagnostico-covid?orgId=1&from=1662733743976&to=1662755343976&panelId=6\" width=\"1800\" height=\"600\" frameborder=\"0\"></iframe>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 180,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d141fdbfb6d292a0",
+        "type": "ui_group",
+        "name": "Tabla de datos",
+        "tab": "6356027da40bcd49",
+        "order": 4,
+        "disp": true,
+        "width": 25,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6356027da40bcd49",
+        "type": "ui_tab",
+        "name": "Detector sintomas COVID",
+        "icon": "dashboard",
+        "order": 9,
+        "disabled": false,
+        "hidden": false
+    }
+]
