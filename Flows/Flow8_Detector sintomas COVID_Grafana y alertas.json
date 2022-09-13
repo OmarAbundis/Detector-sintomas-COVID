@@ -1,0 +1,43 @@
+[
+    {
+        "id": "57e3b922f106c805",
+        "type": "ui_template",
+        "z": "4a9ef367736b473f",
+        "group": "43a2130fa2de55c2",
+        "name": "BPM",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<iframe src=\"http://localhost:3000/d-solo/FSjvyfGVz/protodiagnostico-covid?orgId=1&from=1663072167028&to=1663093767028&panelId=10\" width=\"225\" height=\"100\" frameborder=\"0\"></iframe>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 390,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43a2130fa2de55c2",
+        "type": "ui_group",
+        "name": "Gauge COVID",
+        "tab": "6356027da40bcd49",
+        "order": 5,
+        "disp": true,
+        "width": 5,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6356027da40bcd49",
+        "type": "ui_tab",
+        "name": "Detector sintomas COVID",
+        "icon": "dashboard",
+        "order": 9,
+        "disabled": false,
+        "hidden": false
+    }
+]
